@@ -1,4 +1,14 @@
-<router-outlet></router-outlet>
+<ul class="nav">
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <a routerLink="">Главная</a>
+    </li>
+    <li routerLinkActive="active">
+        <a routerLink="/about">О сайте</a>
+    </li>
+    <li routerLinkActive="active">
+        <a [routerLink]="['item', '5']">item 5</a>
+    </li>
+</ul>
 
 <app-child></app-child>
 
@@ -12,3 +22,5 @@
       </tr>
   </table>
 </div>
+
+<router-outlet></router-outlet>
