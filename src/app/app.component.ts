@@ -10,13 +10,15 @@ import { DataService } from './data.service';
 
 export class AppComponent {
   title = 'little-ng-app';
-
   items: string[] = [];
-  
+  name: string = '';
+
+  sample_text = '';
+
   constructor(private dataService: DataService){}
-  
-  addItem(name: string){
-    this.dataService.addData(name);
+
+  addItem(){
+    this.dataService.addData(this.name);
   }
 
   ngOnInit(){

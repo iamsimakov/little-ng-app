@@ -1,3 +1,12 @@
-.nav{ clear: both;}
-a {float: left;}
-.active a { color: red;}
+.nav {
+  clear: both;
+}
+
+a {
+  float: left;
+  margin: 10px;
+}
+
+.active a {
+  color: red;
+}
