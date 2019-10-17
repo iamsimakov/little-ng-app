@@ -1,32 +1,16 @@
-<ul class="nav">
-    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-        <a routerLink="">Главная</a>
-    </li>
-    <li routerLinkActive="active">
-        <a routerLink="/about">О сайте</a>
-    </li>
-    <li routerLinkActive="active">
-        <a [routerLink]="['item', '5']">item 5</a>
-    </li>
-</ul>
+<nav class="navbar">
+  <h1>Angular Modules</h1>
 
-<div style="margin: 20px;">
-    <app-child></app-child>
+  <ul>
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">Home</a></li>
+    <li routerLinkActive="active"><a routerLink="/about">About</a></li>
+  </ul>
+</nav>
 
-    <div class="panel">
-    <div>
-        <input [(ngModel)]="name" (keydown.enter)="addItem()" placeholder="Модель" />
-        <button (click)="addItem()">Добавить</button>
-    </div>
-    <table>
-        <tr *ngFor="let item of items">
-            <td>{{ item }}</td>
-        </tr>
-    </table>
-    </div>
+<div class="container">
+  <div class="card">
 
+    <router-outlet></router-outlet>
+
+  </div>
 </div>
-
-<hr />
-
-<router-outlet></router-outlet>
