@@ -5,10 +5,13 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
 
-  constructor() { }
-
   private key: string;
-  private server_url: string;
+  private serverUrl: string;
+
+  constructor() {
+    this.key = localStorage.getItem('key');
+    this.serverUrl = localStorage.getItem('serverUrl');
+  }
 
   getKey() {
     return this.key;
@@ -19,10 +22,15 @@ export class DataService {
   }
 
   getServerUrl() {
-    return this.server_url;
+    return this.serverUrl;
   }
 
-  setServerUrl(server_url: string) {
-    this.server_url = server_url;
+  setServerUrl(serverUrl: string) {
+    this.serverUrl = serverUrl;
+  }
+
+  saveLocalStorage() {
+    localStorage.setItem('key', this.key);
+    localStorage.setItem('serverUrl', this.serverUrl);
   }
 }

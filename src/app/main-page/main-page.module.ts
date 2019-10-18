@@ -16,9 +16,9 @@ const routes: Routes = [
     MainPageComponent
   ],
   imports: [
+    CommonModule,
     FormsModule,
     SharedModule,
-    CommonModule,
     RouterModule.forChild(routes)
   ],
   exports: [RouterModule],

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 
 @Component({
@@ -7,16 +7,27 @@ import { DataService } from '../data.service';
   styleUrls: ['./main-page.component.scss'],
   // providers: [DataService]
 })
-export class MainPageComponent {
+export class MainPageComponent implements OnInit {
   private key: string;
-  private server_url: string;
+  private serverUrl: string;
+
+  private savedOk: boolean;
 
   constructor(private dataService: DataService) {}
 
+  ngOnInit() {
+    this.key = this.dataService.getKey();
+    this.serverUrl = this.dataService.getServerUrl();
+  }
+
   save() {
-    // console.log(this.key, this.server_url);
+    // console.log(this.key, this.serverUrl);
     this.dataService.setKey(this.key);
-    this.dataService.setServerUrl(this.server_url);
+    this.dataService.setServerUrl(this.serverUrl);
+    this.dataService.saveLocalStorage();
+
+    this.savedOk = true;
+    setTimeout(() => this.savedOk = false, 3000);
   }
 
 }
