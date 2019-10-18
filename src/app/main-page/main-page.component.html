@@ -1,1 +1,8 @@
-<h1>main page</h1>
+
+Server url:
+<input [(ngModel)]="key" (keyup.enter)="save()" />
+
+Key:
+<input [(ngModel)]="server_url" (keyup.enter)="save()" />
+
+<button (click)="save()">Save in browser</button>
