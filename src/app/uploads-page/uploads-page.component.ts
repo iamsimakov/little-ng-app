@@ -14,9 +14,9 @@ export class UploadsPageComponent implements OnInit {
   private key: string;
   private serverUrl: string;
 
-  private readyConnect: boolean = false;
+  readyConnect: boolean = false;
 
-  private uploads: Array<Upload> = [];
+  uploads: Array<Upload> = [];
 
   constructor(private dataService: DataService, private router: Router) {}
 

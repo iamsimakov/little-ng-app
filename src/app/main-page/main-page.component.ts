@@ -8,10 +8,10 @@ import { DataService } from '../data.service';
   // providers: [DataService]
 })
 export class MainPageComponent implements OnInit {
-  private key: string;
-  private serverUrl: string;
+  key: string;
+  serverUrl: string;
 
-  private savedOk: boolean;
+  savedOk: boolean;
 
   constructor(private dataService: DataService) {}
 
