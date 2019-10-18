@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UploadsPageModule } from './uploads-page/uploads-page.module';
 import { SharedModule } from './shared/shared.module';
+import { MainPageModule } from './main-page/main-page.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     FormsModule,
     UploadsPageModule,
+    MainPageModule,
     SharedModule
   ],
   // providers: [DataService],
