@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+import { Upload } from './shared/upload';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +11,7 @@ export class DataService {
   private key: string;
   private serverUrl: string;
 
-  constructor() {
+  constructor(private httpClient: HttpClient) {
     this.key = localStorage.getItem('key');
     this.serverUrl = localStorage.getItem('serverUrl');
   }
@@ -32,5 +35,9 @@ export class DataService {
   saveLocalStorage() {
     localStorage.setItem('key', this.key);
     localStorage.setItem('serverUrl', this.serverUrl);
+  }
+
+  getUploads(){
+    return this.httpClient.get<Array<Upload>>(`${this.serverUrl}?secret=${this.key}`);
   }
 }

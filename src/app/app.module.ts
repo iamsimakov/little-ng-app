@@ -8,6 +8,7 @@ import { UploadsPageModule } from './uploads-page/uploads-page.module';
 import { SharedModule } from './shared/shared.module';
 import { MainPageModule } from './main-page/main-page.module';
 import { DataService } from './data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DataService } from './data.service';
     FormsModule,
     UploadsPageModule,
     MainPageModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

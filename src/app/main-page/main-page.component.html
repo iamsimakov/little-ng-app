@@ -1,14 +1,16 @@
 
-<div *ngIf="this.savedOk" class="alert alert-success">Saved - ok</div>
+<div class="container">
+  <div *ngIf="this.savedOk" class="alert alert-success">Saved - ok</div>
 
-<div class="form-group">
-  <label>Server url:</label>
-  <input [(ngModel)]="key" (keyup.enter)="save()" class="form-control" />
+  <div class="form-group">
+    <label>Server url:</label>
+    <input [(ngModel)]="serverUrl" (keyup.enter)="save()" class="form-control" />
+  </div>
+  
+  <div class="form-group">
+    <label>Key:</label>
+    <input [(ngModel)]="key" (keyup.enter)="save()" class="form-control" />
+  </div>
+  
+  <button (click)="save()" class="btn btn-primary">Save in browser</button>
 </div>
-
-<div class="form-group">
-  <label>Key:</label>
-  <input [(ngModel)]="serverUrl" (keyup.enter)="save()" class="form-control" errors='["122"]'/>
-</div>
-
-<button (click)="save()" class="btn btn-primary">Save in browser</button>
